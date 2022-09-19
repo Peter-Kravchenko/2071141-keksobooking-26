@@ -62,7 +62,6 @@ export const getFilterOffers = (ads) => {
   const activeFeatureFilters = Array.from(housingFeaturesElement)
     .filter((feature) => feature.checked)
     .map((feature) => feature.value);
-  ads.slice(0, MAX_ADS);
   const result = ads
     .filter((ad) => checkType(ad)
       && checkPrice(ad)
