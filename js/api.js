@@ -1,8 +1,8 @@
-import {showAlert} from './messages.js';
+import { showAlert } from "./messages.js";
 
 const Address = {
-  GET: 'https://26.javascript.pages.academy/keksobooking/data',
-  SEND: 'https://26.javascript.pages.academy/keksobooking',
+  GET: "https://26.javascript.htmlacademy.pro/keksobooking/data",
+  SEND: "https://26.javascript.htmlacademy.pro/keksobooking",
 };
 
 export const getData = (onSuccess) => {
@@ -16,19 +16,14 @@ export const getData = (onSuccess) => {
     .then((data) => {
       onSuccess(data);
     })
-    .catch((error) =>
-      showAlert (`Ошибка при получении данных ${error}`)
-    );
+    .catch((error) => showAlert(`Ошибка при получении данных ${error}`));
 };
 
-export const sendData = (onSuccess, onError, body) =>
-{
-  fetch(Address.SEND,
-    {
-      method: 'POST',
-      body,
-    },
-  )
+export const sendData = (onSuccess, onError, body) => {
+  fetch(Address.SEND, {
+    method: "POST",
+    body,
+  })
     .then((response) => {
       if (response.ok) {
         onSuccess();
